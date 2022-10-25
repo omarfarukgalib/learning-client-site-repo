@@ -5,7 +5,7 @@ const Home = () => {
     const topics = useLoaderData();
     return (
         <div>
-            <p>home page{topics.length}</p>
+            <p>home page</p>
            
         </div>
     );
