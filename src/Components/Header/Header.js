@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <Link to="/about">link</Link>
+            <Link to="/">Courses</Link>
+            <Link to="/faq">FAQ</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/themes">Themes</Link>
+            <Link to="/login">Login</Link>
         </div>
     );
 };
