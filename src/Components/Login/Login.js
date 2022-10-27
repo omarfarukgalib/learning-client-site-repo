@@ -5,7 +5,7 @@ import { authContext } from '../Contexts/UserContext';
 
 const Login = () => {
   const navigate = useNavigate()
-    const {logIn,logOut} = useContext(authContext)
+    const {logIn,logOut,googleProvider,githubProvider} = useContext(authContext)
     const handleSubmit = (event) =>{
         event.preventDefault();
         const form = event.target;
@@ -33,6 +33,33 @@ const Login = () => {
             // An error happened.
             console.error(error)
           });
+          googleProvider()
+          .then((result) => {
+           
+            // The signed-in user info.
+            const user = result.user;
+           console.log(user)
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            
+            console.error(error)
+          });
+          githubProvider()
+          .then((result) => {
+           
+        
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user)
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(error)
+            
+          });
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -58,8 +85,8 @@ const Login = () => {
                 
               </div>
                
-                <button className="btn btn-primary">Google</button>
-                <button className="mt-3 btn btn-primary">Github</button>
+                <button onClick={googleProvider} className="btn btn-primary">Google</button>
+                <button onClick={githubProvider} className="mt-3 btn btn-primary">Github</button>
               </div>
               <div className="form-control mt-6">
               
