@@ -3,7 +3,7 @@ import Count from '../Count/Count';
 
 const Faq = () => {
     return (
-        <div className="grid grid-cols-1 w-full mx-auto stats shadow">
+        <div className="h-[800px] grid grid-cols-1 w-full mx-auto stats shadow">
   
   <div className=" stat">
     <div className="stat-figure text-primary">

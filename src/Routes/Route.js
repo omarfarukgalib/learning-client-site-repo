@@ -4,6 +4,7 @@ import CourseDetails from "../Components/CourseDetails/CourseDetails";
 import CourseDetailsTwo from "../Components/CourseDetailsTwo/CourseDetailsTwo";
 import Courses from "../Components/Courses/Courses";
 import Faq from "../Components/Faq/Faq";
+import Footer from "../Components/Footer/Footer";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import NotFound from "../Components/NotFound/NotFound";
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
            {
             path:'/faq',
             element:<Faq></Faq>
+           },
+           {
+            path:'/footer',
+            element:<Footer></Footer>
            },
             {
                 path:'/register',

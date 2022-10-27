@@ -2,8 +2,8 @@ import React from 'react';
 
 const Count = () => {
     return (
-        <div className="mt-24">
-        <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+        <div className="mt-24 hidden">
+        <div className="">
           <span className="countdown font-mono text-5xl">
             <span style={{"--value":15}}></span>
           </span>
