@@ -17,6 +17,7 @@ const Header = () => {
       <li><Link to="/blog" className='mx-3 bg-white'>Blog</Link></li>
       <li><Link to="/" className='mx-3 bg-white'>Themes</Link></li>
       <li><Link to="/login" className='mx-8 bg-white'>Login</Link></li>
+      <li><Link to="/register" className='mx-8 bg-white'>Register</Link></li>
     </ul>
     </div>
     </div>
