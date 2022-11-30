@@ -1,16 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "../Components/Blog/Blog";
-import CourseDetails from "../Components/CourseDetails/CourseDetails";
-import CourseDetailsTwo from "../Components/CourseDetailsTwo/CourseDetailsTwo";
-import Courses from "../Components/Courses/Courses";
-import Faq from "../Components/Faq/Faq";
-import Footer from "../Components/Footer/Footer";
-import Home from "../Components/Home/Home";
-import Login from "../Components/Login/Login";
-import NotFound from "../Components/NotFound/NotFound";
-import Register from "../Components/Regester/Register";
 import Main from "../Layout/Main";
-
+import Blog from "../Pages/Blog/Blog";
+import Faq from "../Pages/Faq/Faq";
+import Home from "../Pages/Home/Home/Home";
+import Login from "../Pages/Login/Login";
+import Notfound from "../Pages/Notfound/Notfound";
+import Signup from "../Pages/Signup/Signup";
 export const router = createBrowserRouter([
     {
         path:'/',
@@ -21,42 +16,36 @@ export const router = createBrowserRouter([
                 
                 element:<Login></Login>
             },
+            {
+                path:'/signup',
+                
+                element:<Signup></Signup>
+            },
+            {
+                path:'/',
+                
+                element:<Home></Home>
+            },
            {
             path:'/faq',
             element:<Faq></Faq>
            },
            {
-            path:'/footer',
-            element:<Footer></Footer>
+            path:'/blog',
+            element:<Blog></Blog>
            },
-            {
-                path:'/register',
-                element:<Register></Register>
-            },
-            {
-                path:'/blog',
-                element:<Blog></Blog>
-            },
+           
             {
                 path:'/',
-                loader:()=>{
-                    return fetch('http://localhost:5000/topics')
-                },
-                element:<Courses></Courses>
-            },
-            {
-                path:'/courses/:id',
-                loader:({params})=>{
-                  return  fetch(`http://localhost:5000/topics/${params.id}`)
-                },
-                element:<CourseDetails></CourseDetails>
+                element:<Signup></Signup>
             },
            
+
         ]
        
     },
     {
         path:'*',
-        element:<NotFound></NotFound>
+        element:<Notfound></Notfound>
     }
 ])
